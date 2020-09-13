@@ -1,0 +1,6 @@
+.home_row {
+    display: flex;
+    z-index: 1;
+    margin-left: 70px;
+    margin-right: 70px;
+}
