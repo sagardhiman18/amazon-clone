@@ -7,16 +7,30 @@ import {
   Route, 
   Switch 
 } from "react-router-dom";
+import { createStore } from "redux";
+import { Provider } from "react-redux";
+
 import Home from './screens/home';
+import CheckOut from './screens/checkout';
+import Login from './screens/login';
+import Register from './screens/register';
+import reducer from "./redux/reducer";
+
+const store = createStore(reducer);
 
 const headerroutes = (
+  <Provider store={store}>
   <BrowserRouter>
     <div>
       <Switch>
         <Route exact path="/" component={Home}></Route>
+        <Route exact path="/checkout" component={CheckOut}></Route>
+        <Route exact path="/login" component={Login} />
+        <Route exact path="/register" component={Register} />
       </Switch>
     </div>
   </BrowserRouter>
+  </Provider>
 );
 
 ReactDOM.render(headerroutes, document.getElementById('root'));

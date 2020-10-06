@@ -1,9 +1,10 @@
 import React from 'react';
-import './product.css';
+import './checkoutProduct.css';
 import Button from '@material-ui/core/Button';
 import { useDispatch } from 'react-redux';
 import * as actionTypes from '../../redux/action';
-const Product = ({
+
+const CheckoutProduct = ({
     id,
     title,
     image,
@@ -12,38 +13,36 @@ const Product = ({
 }) => {
 
     const dispatch = useDispatch();
-    const addcart = () => {
-        dispatch({type: actionTypes.ADDCART,
-                    item: {
-                        id,
-                        title,
-                        image,
-                        price,
-                        rating
-                    },
+    const removecart = () => {
+        dispatch({type: actionTypes.REMOVECART,
+                        id
         });
         //console.log(actionTypes.ADDCART);
     };
+
     return (
-        <div className="product" key={id}>
-            <div className="product_info">
-                <p>{title}</p>
-                <p className="product_price">
+        <div className="checkoutProduct">
+            <img className="checkoutProduct_image" src={image} alt="" />
+            
+            <div className="checkoutProduct_info">
+                <p className="checkoutProduct_title">{title}</p>
+                <p className="checkoutProduct_price">
                     <small>$</small>
                     <strong>{price}</strong>
                 </p>
-                <div className="product_rating">
+
+                <div className="checkoutProduct_rating">
                     {Array(rating)
                         .fill()
                         .map((_) => (
                         <p>⭐</p>
                     ))}
                 </div>
+
+                <Button onClick={removecart}>Remove from basket</Button>
             </div>
-            <img src={image} alt="product_image" />
-            <Button onClick={addcart}>Add to basket</Button>
         </div>
     );
 }
 
-export default Product;
+export default CheckoutProduct;

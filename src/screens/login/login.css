@@ -1,0 +1,39 @@
+.main-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    top: 50px;
+}
+
+/* .amazon_logo {
+    width: 100px;
+    object-fit: contain;    
+} */
+
+h2 {
+    margin-bottom: 10px;
+}
+
+.fields {
+    padding: 6px;
+    margin-top: 7px;
+    margin-bottom: 10px;
+    width: 29%;
+}
+
+.register-btn {
+    appearance:none;
+    -webkit-appearance:none;
+    padding:10px;
+    color:#fff;
+    font-weight:600;
+    border-radius:5px;
+    width:100%;
+    margin-top: 5px;
+    width: 30%;
+    margin-bottom: 20px;
+    background-color: #cd9042;
+    border: 1px solid;
+    border-color: #cd9042;
+}

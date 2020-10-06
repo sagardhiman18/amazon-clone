@@ -4,3 +4,7 @@
     margin-left: 70px;
     margin-right: 70px;
 }
+
+.home_second_row {
+    display: flex;
+}
